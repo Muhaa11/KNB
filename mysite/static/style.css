@@ -1,0 +1,447 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+.header{
+    min-height: 90%;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0),rgba(4, 9, 30, 0)),url(assets/bg.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+nav{
+    display: flex;
+    padding: 2% 4%;
+    align-items: center;
+    justify-content: space-between;
+}
+nav img{
+    width: 160px;
+}
+.cont-pages{
+    flex: 1;
+    text-align: right;
+}
+.cont-pages ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.cont-pages ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+}
+.cont-pages ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #ecba16;
+    display: block;
+    margin: auto;
+    transition: .2s;    
+}
+.cont-pages ul li:hover::after{
+    width: 100%;
+}
+nav .fa{
+    display: none;
+}
+
+.txt-title{
+    width: 90%;
+    color: #ecba16;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.txt-title h1{
+    font-size: 45px;
+}
+.txt-title p{
+    margin: 20px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #ecba16;
+    padding: 13px 34px;
+    font-size: 14px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: .7s;
+}
+
+.hero-btn:hover{
+    border: 1px solid #ecba16;
+    background: #ecba16;
+}
+
+
+@media(max-width: 700px)
+{
+   .cont-pages ul li
+    {
+        display: block;
+        
+    }
+    .cont-pages ul li a
+    {
+        color: #fff;
+    }
+    .cont-pages
+    {
+        position: absolute;
+        background-image: linear-gradient(rgb(17, 68, 146),rgba(17, 68, 146,.7));
+        height: 100%;
+        width: 200px;
+        top: 0;
+        right: -300px;
+        text-align: left;
+        z-index: 5;
+        transition: 0.5s;
+    }
+    .cont-pages ul{
+        padding: 30px;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer; 
+    }
+    .txt-title h1{
+        font-size: 20px;
+    }
+    .txt-title p{
+        font-size: 12px;
+    }
+
+    /* rows */
+
+    .row{
+        flex-direction: column;
+    }
+    
+    /* Outro */
+
+    .outro h1{
+        font-size: 24px;
+    }
+
+}
+
+/*---------- welcome --------*/
+
+.welcome{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 40px;
+    font-weight: 500;
+}
+p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;  
+}
+  
+.welcome-col{
+    flex-basis: 45%;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    margin-bottom: 7%;
+    padding: 15px 50px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.welcome-col:hover{
+    box-shadow: 0 0 25px 0px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-col input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.hero-btn.sbmt{
+    color: black;
+}
+
+
+/*---------------- About us ----------------*/
+
+.abt{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+
+/*--------------Footer---------------*/
+
+.outro{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55),rgba(0,0,0,0.55)),url(assets/kabab.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.outro h1{
+    color: #fff;
+    margin-bottom: 10px; 
+    padding: 0; 
+}
+.outro p{
+    color: #fff;
+    margin-bottom: 15px; 
+    padding: 0; 
+}
+
+
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.footer p{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 400;
+    display: inline-block; 
+    text-align: left;
+}
+
+.icons .fa{
+    color: #ecba16;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+
+
+
+
+
+
+
+
+/*--------------- Balance Page --------------*/
+
+
+
+.balance{
+    width: 90%;
+    margin: auto;
+    padding-top: 55px;
+    padding-bottom: 50px;
+}
+
+.balance-col{
+    flex-basis: 90%;
+    padding: 30px 2px;
+    text-align: center;
+}
+.balance-col h1{
+    padding-top: 0;
+}
+.balance-col h2{
+    color: red;
+    padding-top: 0;
+    font-weight: bold;
+}
+.balance-col p{
+    color: rgb(12, 12, 12);
+    text-align: left;
+    font-size: 16;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: -10px;
+}
+.balance-col p1{
+    margin-right: -3px;
+    font-family: serif;
+    color: red;
+    font-size: 15;
+    font-weight: bold;
+}
+.balance-col p2{
+    font-family: serif;
+    color: red;
+    font-size: 15;
+    font-weight: bold;
+}
+
+.content-image{
+    flex-basis: 50%;
+}
+.balance-col img{
+    width: 100%;
+}
+
+
+
+
+
+/*---------- Deposit Page -------------*/
+
+
+.deposit{
+    width: 90%;
+    margin: auto;
+    padding-top: 55px;
+    padding-bottom: 50px;
+}
+
+.deposit-col{
+    flex-basis: 90%;
+    padding: 30px 2px;
+    text-align: center;
+}
+.deposit-col h1{
+    padding-top: 0;
+}
+.deposit-col h2{
+    color: red;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+
+.deposit-col input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+
+.content-image{
+    flex-basis: 50%;
+}
+.deposit-col img{
+    margin-top: -30px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/*---------- Withdraw Page -------------*/
+
+.withdraw{
+    width: 90%;
+    margin: auto;
+    padding-top: 55px;
+    padding-bottom: 50px;
+}
+
+.withdraw-col{
+    flex-basis: 90%;
+    padding: 30px 2px;
+    text-align: center;
+}
+.withdraw-col h1{
+    padding-top: 0;
+}
+.withdraw-col h2{
+    color: red;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+
+.withdraw-col input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+
+.content-image{
+    flex-basis: 50%;
+}
+.withdraw-col img{
+    margin-top: -30px;
+    width: 100%;
+}
+
+
+
+
+
+/*------- Logout Page ------------*/
+
+.logout{
+    width: 90%;
+    margin: auto;
+    padding-top: 55px;
+    padding-bottom: 50px;
+}
+
+.logout-col{
+    flex-basis: 90%;
+    padding: 30px 2px;
+    text-align: center;
+}
+
+.logout-col h1{
+    padding-top: 0;
+}
+.logout-col h2{
+    color: red;
+    padding-top: 0;
+    font-weight: bold;
+}
+
+

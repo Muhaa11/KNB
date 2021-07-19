@@ -1,0 +1,107 @@
+{% load static %}
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="{% static 'KNB/style.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+<title>Kabab National Bank</title>
+
+</head>
+<body>
+    <section class="header">
+        
+        <nav>
+            <a href="index.html"><img src="assets/logo.png"></a>
+            <div class="cont-pages" id="pgs">  
+                <i class="fa fa-close" onclick="hideBar()"></i>
+                <ul>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="balance">Check Balance</a></li>
+                    <li><a href="deposit">Deposit</a></li>
+                    <li><a href="withdraw">Withdraw</a></li>
+                    <li><a href="logout">Logout</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showBar()"></i>
+        </nav>
+        
+        <div class="txt-title">
+            <h1>Kabab National Bank</h1>
+            <p>You're Poorer Than You Think!</p>
+            <a href="index.html" class="hero-btn">KNB</a>
+        </div>
+    </section>
+    
+
+    
+<!------- Withdraw content -------->
+    
+<section class="withdraw">
+    <div class="row">
+        <div class="withdraw-col">
+            <h1>Welcome</h1>  
+            <h2>###</h2> 
+            <br><br><br>
+
+            <form method="post" action="#">
+                <input type="number" name="withdraw" placeholder="Withdraw amount" required min="1">
+                <button type="submit" class="hero-btn sbmt">Withdraw</button>
+                </form> 
+        </div>
+
+        <div class="withdraw-col">
+            <img src="assets/withdraw.jpg">
+        </div>
+
+    </div>    
+</section>
+
+
+<!------ Outro ------>
+
+<section class="outro">
+    
+    <h1>KNB</h1>
+    <p><span style="color: ecba16">Food</span> taste healthier, when you're <span style="color: ecba16">richer</span></p>
+     <a href="index.html" class="hero-btn">Home</a>
+ 
+</section>    
+    
+<!-------- footer ---------->
+
+<section class="footer">
+    <h4>Created By</h4>
+    <p>Mahmood Aljeboory <br>
+    Ahmed Thaer <br>
+Abdullah Kaddura <br>
+Barrington Thorp </p>
+    <div class="icons">
+        <a href=""><i class="fa fa-facebook"></i></a>
+        <a href=""><i class="fa fa-twitter"></i></a>
+        <a href=""><i class="fa fa-instagram"></i></a>
+        <a href=""><i class="fa fa-linkedin"></i></a>
+        
+    </div>
+</section>    
+
+
+<!----JavaScript for toggle menu---->
+<script>
+var pgs = document.getElementById("pgs");
+
+function showBar() {
+    pgs.style.right = "0";
+}
+
+function hideBar() {
+    pgs.style.right = "-300px";
+}
+</script> 
+
+</body>
+</html>
