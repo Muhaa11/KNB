@@ -46,3 +46,9 @@ def logout_request(request):
     logout(request)
     messages.info(request, "You logged out successfully!")
     return redirect('login-view')
+
+def deposit(request):
+    return render(request, 'deposit.html')
+
+def withdraw(request):
+    return render(request, 'withdraw.html')

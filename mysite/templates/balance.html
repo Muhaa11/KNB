@@ -20,11 +20,11 @@
             <div class="cont-pages" id="pgs">  
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
-                    <li><a href="{% url 'home-view' %}">HOME</a></li>
-                    <li><a href="{% url 'home-view' %}">Check Balance</a></li>
-                    <li><a href="{% url 'deposit.html' %}">Deposit</a></li>
-                    <li><a href="{% url 'withdraw.html' %}">Withdraw</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="balance">Check Balance</a></li>
+                    <li><a href="deposit">Deposit</a></li>
+                    <li><a href="withdraw">Withdraw</a></li>
+                    <li><a href="logout">Logout</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showBar()"></i>
@@ -39,30 +39,29 @@
     
 
     
-<!------- Deposit content -------->
+<!------- Balance content -------->
     
-<section class="deposit">
+<section class="balance">
     <div class="row">
-        <div class="deposit-col">
-            <h1>Welcome</h1>  
+        <div class="balance-col">
+            <h1>Welcome </h1>  
             <h2>{% for account in Truebalance %}
                 {{account.username}}
                 {% endfor %}</h2>
             <br><br><br>
-
-            <form method="post" action="#">
-                <input type="number" name="deposit" placeholder="Deposit amount" required min="1">
-                <button type="submit" class="hero-btn sbmt">Deposit</button>
-                </form> 
+            <p>Your current balance is: </p>
+            <p1>$</p1>
+            <p2>{% for account in Truebalance %}
+                {{account.balanceD}}
+                {% endfor %}</p2>
         </div>
 
-        <div class="deposit-col">
-            <img src="assets/deposit.jpg">
+        <div class="balance-col">
+            <img src="{% static 'KNB/assets/balance.jpg' %}">
         </div>
 
     </div>    
 </section>
-
 
 <!------ Outro ------>
 
@@ -72,7 +71,7 @@
     <p><span style="color: ecba16">Food</span> taste healthier, when you're <span style="color: ecba16">richer</span></p>
      <a href="index.html" class="hero-btn">Home</a>
  
-</section>     
+</section>      
     
 <!-------- footer ---------->
 
