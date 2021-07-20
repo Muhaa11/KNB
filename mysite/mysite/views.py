@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from KNB.forms import Balance_form
+from KNB.forms import Deposit_form
 from userlogin.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm
 from KNB.forms import SignUpForm
+from KNB.models import Balance
 from .utils import send_sms
 from django.contrib import messages
 
@@ -47,7 +48,13 @@ def logout_request(request):
     messages.info(request, "You logged out successfully!")
     return redirect('login-view')
 
-def deposit(request):
+
+def deposit(request):  
+    form = Deposit_form(request.POST or None)
+    num1 = request.POST.get('number')
+    if num1:
+        Balance.number = num1
+        
     return render(request, 'deposit.html')
 
 def withdraw(request):

@@ -50,7 +50,9 @@
                 {% endfor %}</h2>
             <br><br><br>
 
-            <form method="post" action="#">
+            <form method="POST" action="#">
+                    {% csrf_token %}
+                    {{ form }}
                 <input type="number" name="deposit" placeholder="Deposit amount" required min="1">
                 <button type="submit" class="hero-btn sbmt">Deposit</button>
                 </form> 
