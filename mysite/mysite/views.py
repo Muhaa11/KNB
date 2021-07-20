@@ -2,13 +2,13 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from KNB.forms import Deposit_form
+from KNB.forms import DepositForm
 from userlogin.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm
-from KNB.forms import SignUpForm
-from KNB.models import Balance
+from .forms import SignUpForm
 from .utils import send_sms
 from django.contrib import messages
+from KNB.models import Balance
 
 @login_required
 def profile(request):
@@ -24,7 +24,7 @@ def auth_view(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            login(request, user)
+            request.session['pk'] = user.pk
             return redirect('home-view')
     return render(request, 'login.html', {'form': form})
 
@@ -50,10 +50,27 @@ def logout_request(request):
 
 
 def deposit(request):  
-    form = Deposit_form(request.POST or None)
-    num1 = request.POST.get('number')
-    if num1:
-        Balance.number = num1
+    form = DepositForm(request.POST or None)
+    pk = request.session.get('pk')
+    
+    if pk:        
+        user = CustomUser.objects.get(pk=pk)
+        balance = user.balance
+        code_user = f"{user.username}: {user.balance}"
+        if not request.POST:
+            balance.save()
+            print(balance.number)
+        if request.method == "POST":
+            if form.is_valid():
+
+                
+                print(balance.number)
+                balance.number = balance.number + 5
+                print(balance.number)
+
+                form.save()
+
+                return redirect('home-view')
         
     return render(request, 'deposit.html')
 

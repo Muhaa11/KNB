@@ -26,7 +26,7 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('logout/', logout_request, name='logout'),
     path('profile/', profile, name='content.html'),
-    path('deposit/', deposit, name='deposit.html'),
+    path('deposit/', deposit, name='deposit-view'),
     path('withdraw/', withdraw, name='withdraw.html')
 
 ]
