@@ -88,7 +88,7 @@ def withdraw(request):
                 num = form.cleaned_data.get('number')
                 print(balance.number)
                 balance.number = balance.number - num
-                if balance.number <= 0:
+                if balance.number < 0:
                     return redirect('home-view')
                 print(balance.number)
                 balance.save(force_update=True)

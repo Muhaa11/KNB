@@ -15,15 +15,15 @@
     <section class="header">
         
         <nav>
-            <a href="index.html"><img src="assets/logo.png"></a>
+            <a href="index.html"><img src="{% static 'assets/logo.png' %}"></a>
             <div class="cont-pages" id="pgs">  
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
-                    <li><a href="home-view">HOME</a></li>
-                    <li><a href="balance">Check Balance</a></li>
-                    <li><a href="deposit">Deposit</a></li>
-                    <li><a href="withdraw">Withdraw</a></li>
-                    <li><a href="logout">Logout</a></li>
+                    <li><a href="{% url 'home-view' %}">HOME</a></li>
+                    <li><a href="{% url 'home-view' %}">Check Balance</a></li>
+                    <li><a href="{% url 'deposit-view' %}">Deposit</a></li>
+                    <li><a href="{% url 'withdraw.html' %}">Withdraw</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showBar()"></i>
