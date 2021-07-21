@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
-from KNB.forms import DepositForm
+from KNB.forms import DepositForm, Withdrawform
 from userlogin.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
@@ -62,17 +62,36 @@ def deposit(request):
             print(balance.number)
         if request.method == "POST":
             if form.is_valid():
-
-                
+                num = form.cleaned_data.get('number')
                 print(balance.number)
-                balance.number = balance.number + 5
+                balance.number = balance.number + num
                 print(balance.number)
+                balance.save(force_update=True)
 
-                form.save()
-
-                return redirect('home-view')
         
     return render(request, 'deposit.html')
 
 def withdraw(request):
+    
+    form = Withdrawform(request.POST or None)
+    pk = request.session.get('pk')
+    
+    if pk:        
+        user = CustomUser.objects.get(pk=pk)
+        balance = user.balance
+        code_user = f"{user.username}: {user.balance}"
+        if not request.POST:
+            balance.save()
+            print(balance.number)
+        if request.method == "POST":
+            if form.is_valid():
+                num = form.cleaned_data.get('number')
+                print(balance.number)
+                balance.number = balance.number - num
+                if balance.number <= 0:
+                    return redirect('home-view')
+                print(balance.number)
+                balance.save(force_update=True)
+
+        
     return render(request, 'withdraw.html')

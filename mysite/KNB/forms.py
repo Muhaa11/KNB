@@ -6,7 +6,11 @@ from django_cryptography.fields import encrypt
 
 
 
-
+class Withdrawform(forms.ModelForm):
+    number = forms.IntegerField(label='balance',help_text='Please enter your deposit amount')
+    class Meta:
+        model = Balance
+        fields = ('number',)
 
 
 

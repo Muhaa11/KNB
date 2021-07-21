@@ -16,13 +16,13 @@
     <section class="header">
         
         <nav>
-            <a href="index.html"><img src="assets/logo.png"></a>
+            <a href="index.html"><img src="{% static 'assets/logo.png' %}"></a>
             <div class="cont-pages" id="pgs">  
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
                     <li><a href="{% url 'home-view' %}">HOME</a></li>
                     <li><a href="{% url 'home-view' %}">Check Balance</a></li>
-                    <li><a href="{% url 'deposit.html' %}">Deposit</a></li>
+                    <li><a href="{% url 'deposit-view' %}">Deposit</a></li>
                     <li><a href="{% url 'withdraw.html' %}">Withdraw</a></li>
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                 </ul>
@@ -48,14 +48,16 @@
             <h2>###</h2> 
             <br><br><br>
 
-            <form method="post" action="#">
-                <input type="number" name="withdraw" placeholder="Withdraw amount" required min="1">
-                <button type="submit" class="hero-btn sbmt">Withdraw</button>
-                </form> 
+            <form method="POST" >
+            {% csrf_token %}
+            {{ form }}
+        <input id="number" type="number" name="number" placeholder="Withdraw amount">
+        <button type="submit" class="hero-btn sbmt">Withdraw</button>
+        </form> 
         </div>
 
         <div class="withdraw-col">
-            <img src="assets/withdraw.jpg">
+            <img src="{% static 'assets/withdraw.jpg' %}">
         </div>
 
     </div>    
