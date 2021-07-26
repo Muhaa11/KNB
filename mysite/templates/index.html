@@ -15,7 +15,7 @@
     <section class="header">
         
         <nav>
-            <a href="index.html"><img src="{% static 'assets/logo.png' %}"></a>
+            <a href="{% url 'home-view' %}"><img src="{% static 'assets/logo.png' %}"></a>
             <div class="cont-pages" id="pgs">  
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
@@ -32,7 +32,7 @@
         <div class="txt-title">
             <h1>Kabab National Bank</h1>
             <p>You're Poorer Than You Think!</p>
-            <a href="balance.html" class="hero-btn">Check Your Balance</a>
+            <a href="{% url 'balance.html' %}" class="hero-btn">Check Your Balance</a>
         </div>
     </section>
     
