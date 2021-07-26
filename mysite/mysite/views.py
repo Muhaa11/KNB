@@ -17,6 +17,10 @@ def profile(request):
 def home_view(request):
     return render(request, 'index.html')
 
+
+def balance(request):
+    return render(request, 'balance.html')
+
 def auth_view(request):
     form = AuthenticationForm()
     if request.method == "POST":

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import home_view, auth_view,register, logout_request, profile, deposit,withdraw
+from .views import home_view, auth_view,register, logout_request, profile, deposit,withdraw,balance
 from django.conf.urls import url
 
 
@@ -27,7 +27,8 @@ urlpatterns = [
     path('logout/', logout_request, name='logout'),
     path('profile/', profile, name='content.html'),
     path('deposit/', deposit, name='deposit-view'),
-    path('withdraw/', withdraw, name='withdraw.html')
+    path('withdraw/', withdraw, name='withdraw.html'),
+    path('balance/',balance , name='balance.html')
 
 ]
 
