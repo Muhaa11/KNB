@@ -6,7 +6,6 @@ from KNB.forms import DepositForm, Withdrawform
 from userlogin.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
-from .utils import send_sms
 from django.contrib import messages
 from KNB.models import Balance
 
