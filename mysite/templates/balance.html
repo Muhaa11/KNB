@@ -21,7 +21,7 @@
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
                     <li><a href="{% url 'home-view' %}">HOME</a></li>
-                    <li><a href="{% url 'home-view' %}">Check Balance</a></li>
+                    <li><a href="{% url 'balance.html' %}">Check Balance</a></li>
                     <li><a href="{% url 'deposit-view' %}">Deposit</a></li>
                     <li><a href="{% url 'withdraw.html' %}">Withdraw</a></li>
                     <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -44,13 +44,13 @@
 <section class="balance">
     <div class="row">
         <div class="balance-col">
-            <h1>Welcome </h1>  
+            <h1>Welcome <p style="font-size:35px; display: inline-block; text-align:center; color: red">{{request.user.username}}</p> </h1>  
             <h2>{% for account in Truebalance %}
                 {{account.username}}
                 {% endfor %}</h2>
             <br><br><br>
             <p>Your current balance is: </p>
-            <p1>$</p1>
+            <p1>$ {{request.user.balance.number}}</p1>
             <p2>{% for account in Truebalance %}
                 {{account.balanceD}}
                 {% endfor %}</p2>
