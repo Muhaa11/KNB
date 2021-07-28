@@ -13,37 +13,34 @@ from KNB.models import Balance
 
 
 def home_view(request):
-    return render(request, 'index.html')
+    form = AuthenticationForm()
+    if request.method == "POST":
+        if request.POST.get('submit') == 'signIn':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                request.session['pk'] = user.pk
+                return redirect('home-view')
+
+        elif request.POST.get('submit') == 'signUp':
+            form = SignUpForm(request.POST)
+            if form.is_valid():
+                form.save()
+                user = form.save()
+                return redirect('home-view')
+            else:
+                form = SignUpForm()
+    return render(request, 'index.html', {'form': form})    
 
 @login_required
 def balance(request):
     return render(request, 'balance.html')
 
-def auth_view(request):
-    form = AuthenticationForm()
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            request.session['pk'] = user.pk
-            return redirect('home-view')
-    return render(request, 'login.html', {'form': form})
 
 
 
-def register(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.save()
-            login(request, user)
-            return redirect('login-view')
-    else:
-        form = SignUpForm()
-    return render(request, 'register.html', {'form': form})
 
 def logout_request(request):
 

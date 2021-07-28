@@ -11,11 +11,52 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
+
+.logo {
+    height: 59.75px;
+    width: 126.75px;
+    margin-top: 1%;
+    margin-left: 1%;
+    align-content: center;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.UserWelc {
+    margin-top: 1%;
+    position: absolute;
+    z-index: 1;
+    text-align: left;
+    margin-left: 85%;
+    margin-right: 1%;
+}
+
+.UserWelc h1{
+    color: #fff;
+    font-size: 25px;
+    margin-right: 5%;
+
+}
+
+.UserWelc p{
+    font-size: 23;
+    display: inline-block;
+    color: #ecba16;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
 
 nav{
     display: flex;
-    padding: 2% 4%;
+    padding: 5% .5%;
     align-items: center;
     justify-content: space-between;
 }
@@ -26,29 +67,48 @@ nav img{
     flex: 1;
     text-align: right;
 }
+
 .cont-pages ul li{
     list-style: none;
-    display: inline-block;
+    display: block;
     padding: 8px 12px;
     position: relative;
+    text-align: left;
+    margin-right: 89%;
 }
 .cont-pages ul li a{
-    color: #ffffff;
+
+    color: #ecba16;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 27px;
 }
 .cont-pages ul li::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: #ecba16;
-    display: block;
+    background: #fff;
+    display: inline-block;
     margin: auto;
+    margin-left: 1%;
     transition: .2s;    
 }
 .cont-pages ul li:hover::after{
-    width: 100%;
+    width: 5%;
+    float: left;
 }
+
+.cont-pages ul li a:hover{
+    color: #fff;
+}
+
+
+.logo:hover{
+    height: 68.75px;
+    width: 136.75px;
+    transition: .8s; 
+}
+
+
 nav .fa{
     display: none;
 }
@@ -63,11 +123,11 @@ nav .fa{
     text-align: center;
 }
 .txt-title h1{
-    font-size: 45px;
+    font-size: 60px;
 }
 .txt-title p{
     margin: 20px 0 40px;
-    font-size: 14px;
+    font-size: 18px;
     color: #fff;
 }
 .hero-btn {
@@ -91,15 +151,78 @@ nav .fa{
 
 @media(max-width: 700px)
 {
+
+    .logo {
+        height: 52.75px;
+        width: 126.75px;
+        margin-top: 1%;
+        transform: translate(-50%, 0%);
+        align-content: center;
+        left: 50%;
+        position: absolute;
+    }
+
+
+
+
+    .UserWelc {
+        top: 81%;
+        right: 35%;
+        text-align: left;
+    }
+    
+    .UserWelc h1{
+        color: #000;
+        font-size: 25px;
+    
+    }
+    
+    .UserWelc p{
+        font-size: 23px;
+        display: inline-block;
+        color: #ecba16;
+        text-transform: uppercase;
+    }
+
+
+
+
+
    .cont-pages ul li
     {
         display: block;
+        list-style: none;
+        padding: 8px 12px;
+        position: relative;
+        text-align: left;
+        margin-left: -20%;
         
     }
     .cont-pages ul li a
     {
+        display: block;
         color: #fff;
+        margin: 10px;
+        font-size: 17px;
+        cursor: pointer; 
     }
+
+    .cont-pages ul li::after{
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #ecba16;
+        display: block;
+        margin: auto;
+        transition: .2s;    
+    }
+    .cont-pages ul li:hover::after{
+        width: 100%;
+        
+    }
+
+
+
     .cont-pages
     {
         position: absolute;
@@ -172,6 +295,7 @@ p{
     flex-basis: 45%;
     background: rgb(255, 255, 255);
     border-radius: 25px;
+    margin: 2%;
     margin-bottom: 7%;
     padding: 15px 50px;
     box-sizing: border-box;
@@ -205,7 +329,7 @@ h3{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 150px;
 }
 
 
@@ -292,7 +416,7 @@ h3{
 }
 .balance p{
     font-size: 35px;
-    color: red;
+    color: #ecba16;
     margin-bottom: 2%;
 }
 .balance-col p{
@@ -306,13 +430,15 @@ h3{
 .balance-col p1{
     margin-right: -3px;
     font-family: serif;
-    color: red;
+    color: #169dec;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: bolder;
+    padding-right: 5px;
+    text-transform: uppercase;
 }
 .balance-col p2{
     font-family: serif;
-    color: red;
+    color: #ecba16;
     font-size: 25px;
     font-weight: bold;
 }
@@ -347,7 +473,7 @@ h3{
     padding-top: 0;
 }
 .deposit-col h2{
-    color: red;
+    color: #ecba16;
     padding-top: 0;
     font-weight: bold;
 }
@@ -396,7 +522,7 @@ h3{
     padding-top: 0;
 }
 .withdraw-col h2{
-    color: red;
+    color: #ecba16;
     padding-top: 0;
     font-weight: bold;
 }
@@ -442,7 +568,7 @@ h3{
     padding-top: 0;
 }
 .logout-col h2{
-    color: red;
+    color: #ecba16;
     padding-top: 0;
     font-weight: bold;
 }
