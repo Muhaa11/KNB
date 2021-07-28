@@ -146,7 +146,7 @@ nav .fa{
 /*---------- welcome --------*/
 
 .welcome{
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
     padding-top: 100px;
@@ -281,21 +281,24 @@ h3{
 
 .balance-col{
     flex-basis: 90%;
-    padding: 30px 2px;
+    padding: 25px 2px;
     text-align: center;
 }
-.balance-col h1{
+.balance h1{
+    font-size: 40px;
     padding-top: 0;
+    margin-bottom: 2%;
+
 }
-.balance-col h2{
+.balance p{
+    font-size: 35px;
     color: red;
-    padding-top: 0;
-    font-weight: bold;
+    margin-bottom: 2%;
 }
 .balance-col p{
     color: rgb(12, 12, 12);
     text-align: left;
-    font-size: 16;
+    font-size: 25px;
     font-weight: bold;
     display: inline-block;
     margin-right: -10px;
@@ -304,13 +307,13 @@ h3{
     margin-right: -3px;
     font-family: serif;
     color: red;
-    font-size: 15;
+    font-size: 25px;
     font-weight: bold;
 }
 .balance-col p2{
     font-family: serif;
     color: red;
-    font-size: 15;
+    font-size: 25px;
     font-weight: bold;
 }
 

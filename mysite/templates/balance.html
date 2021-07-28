@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'KNB/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600;1,700&display=swap" rel="stylesheet">
@@ -42,12 +42,15 @@
 <!------- Balance content -------->
     
 <section class="balance">
+    <h1 style="  text-align:center; "> Welcome <p style=" display: inline-block; text-align:center; color: red"> {{request.user.username}} </p> </h1>
+    
+    <h2>{% for account in Truebalance %}
+        {{account.username}}
+        {% endfor %}</h2>
+
     <div class="row">
         <div class="balance-col">
-            <h1>Welcome <p style="font-size:35px; display: inline-block; text-align:center; color: red">{{request.user.username}}</p> </h1>  
-            <h2>{% for account in Truebalance %}
-                {{account.username}}
-                {% endfor %}</h2>
+
             <br><br><br>
             <p>Your current balance is: </p>
             <p1>$ {{request.user.balance.number}}</p1>
@@ -57,7 +60,7 @@
         </div>
 
         <div class="balance-col">
-            <img src="{% static 'KNB/assets/balance.jpg' %}">
+            <img src="{% static 'assets/balance.jpg' %}">
         </div>
 
     </div>    

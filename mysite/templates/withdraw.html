@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="{% static 'KNB/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600;1,700&display=swap" rel="stylesheet">
@@ -42,25 +42,26 @@
 <!------- Withdraw content -------->
     
 <section class="withdraw">
-    <div class="row">
-        <div class="withdraw-col">
-            <h1>Welcome</h1>  
-            <h2>###</h2> 
-            <br><br><br>
+    <h1 style="  text-align:center; "> Welcome <p style="font-size:35px; display: inline-block; text-align:center; color: red"> {{request.user.username}} </p> </h1>
 
-            <form method="POST" >
-            {% csrf_token %}
-            {{ form }}
-        <input id="number" type="number" name="number" placeholder="Withdraw amount">
-        <button type="submit" class="hero-btn sbmt">Withdraw</button>
-        </form> 
-        </div>
+        <div class="row">
+            <div class="withdraw-col">
 
-        <div class="withdraw-col">
-            <img src="{% static 'assets/withdraw.jpg' %}">
-        </div>
+                <br><br><br>
 
-    </div>    
+                <form method="POST" >
+                {% csrf_token %}
+                {{ form }}
+            <input id="number" type="number" name="number" placeholder="Withdraw amount">
+            <button type="submit" class="hero-btn sbmt">Withdraw</button>
+            </form> 
+            </div>
+
+            <div class="withdraw-col">
+                <img src="{% static 'assets/withdraw.jpg' %}">
+            </div>
+
+        </div>    
 </section>
 
 
