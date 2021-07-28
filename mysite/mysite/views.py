@@ -9,14 +9,13 @@ from .forms import SignUpForm
 from django.contrib import messages
 from KNB.models import Balance
 
-@login_required
-def profile(request):
-    return render(request, 'content.html')
+
+
 
 def home_view(request):
     return render(request, 'index.html')
 
-
+@login_required
 def balance(request):
     return render(request, 'balance.html')
 
@@ -50,9 +49,9 @@ def logout_request(request):
 
     logout(request)
     messages.info(request, "You logged out successfully!")
-    return redirect('login-view')
+    return redirect('home-view')
 
-
+@login_required
 def deposit(request):  
     form = DepositForm(request.POST or None)
     pk = request.session.get('pk')
@@ -75,6 +74,7 @@ def deposit(request):
         
     return render(request, 'deposit.html')
 
+@login_required
 def withdraw(request):
     
     form = Withdrawform(request.POST or None)
