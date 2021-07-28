@@ -27,6 +27,7 @@ def auth_view(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
+            login(request, user)
             request.session['pk'] = user.pk
             return redirect('home-view')
     return render(request, 'login.html', {'form': form})

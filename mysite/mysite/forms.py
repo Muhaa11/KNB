@@ -5,6 +5,8 @@ from django.forms import fields
 
 
 class SignUpForm(UserCreationForm):
+    username = forms.CharField(max_length=100)
+
     class Meta:
         model = CustomUser
-        fields = ['username',]
+        fields = ('username', 'password1', 'password2')

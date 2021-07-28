@@ -40,7 +40,7 @@
     
 
 <!---------- Welcome ----------->
-    {% if user.is_authenticated %}
+    {% if request.user.is_authenticated %}
         
         
         <h1 style="text-align:center"> Welcome <p style="font-size:35px; display: inline-block; text-align:center; color: red">{{request.user.username}}</p> </h1>
@@ -96,7 +96,7 @@
     
        <h1>KNB</h1>
        <p><span style="color: ecba16">Food</span> taste healthier, when you're <span style="color: ecba16">richer</span></p>
-        <a href="{% url 'home-view' %}" class="hero-btn">Home</a>
+        <a href="index.html" class="hero-btn">Home</a>
     
 </section>    
  
