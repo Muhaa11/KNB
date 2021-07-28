@@ -16,7 +16,7 @@
     <section class="header">
         
         <nav>
-            <a href="index.html"><img src="{% static 'assets/logo.png' %}"></a>
+            <a href="{% url 'home-view' %}"><img src="{% static 'assets/logo.png' %}"></a>
             <div class="cont-pages" id="pgs">  
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
@@ -72,7 +72,7 @@
     
     <h1>KNB</h1>
     <p><span style="color: ecba16">Food</span> taste healthier, when you're <span style="color: ecba16">richer</span></p>
-     <a href="index.html" class="hero-btn">Home</a>
+     <a href="{% url 'home-view' %}" class="hero-btn">Home</a>
  
 </section>     
     
