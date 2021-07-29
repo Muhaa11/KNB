@@ -90,7 +90,8 @@ def withdraw(request):
                 print(balance.number)
                 balance.number = balance.number - num
                 if balance.number < 0:
-                    return redirect('home-view')
+                    messages.info(request, "Insufficient funds!")
+                    return redirect('withdraw.html')
                 print(balance.number)
                 balance.save(force_update=True)
 
