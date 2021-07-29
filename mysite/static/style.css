@@ -11,12 +11,11 @@
     background-size: cover;
     position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
 .logo {
-    height: 59.75px;
-    width: 126.75px;
+    height: 83.65px;
+    width: 177.45px;
     margin-top: 1%;
     margin-left: 1%;
     align-content: center;
@@ -64,21 +63,20 @@ nav img{
     width: 160px;
 }
 .cont-pages{
-    flex: 1;
-    text-align: right;
+    flex: 2;
+    text-align: center;
 }
 
 .cont-pages ul li{
     list-style: none;
-    display: block;
-    padding: 8px 12px;
+    display: inline-block;
+    padding: 5px 12px;
     position: relative;
-    text-align: left;
-    margin-right: 89%;
+    margin-top: -3%;
 }
 .cont-pages ul li a{
 
-    color: #ecba16;
+    color: #fff;
     text-decoration: none;
     font-size: 27px;
 }
@@ -86,25 +84,24 @@ nav img{
     content: '';
     width: 0%;
     height: 2px;
-    background: #fff;
+    background: #ecba16;
     display: inline-block;
     margin: auto;
     margin-left: 1%;
     transition: .2s;    
 }
 .cont-pages ul li:hover::after{
-    width: 5%;
-    float: left;
+    width: 100%;
 }
 
 .cont-pages ul li a:hover{
-    color: #fff;
+    color: #ecba16;
 }
 
 
 .logo:hover{
-    height: 68.75px;
-    width: 136.75px;
+    height: 96.25px;
+    width: 191.45px;
     transition: .8s; 
 }
 
