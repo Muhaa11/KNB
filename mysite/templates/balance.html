@@ -14,10 +14,7 @@
 
             <br><br><br>
             <p> <p1>{{request.user.username}} </p1> Your current balance is: </p>
-            <p1>$ {{request.user.balance.number}}</p1>
-            <p2>{% for account in Truebalance %}
-                {{account.balanceD}}
-                {% endfor %}</p2>
+            <p1>${{request.user.balance.number}}</p1>
         </div>
 
         <div class="balance-col">

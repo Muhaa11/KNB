@@ -9,11 +9,15 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
 <title>Kabab National Bank</title>
-<div class="loggo">
-    <a href="{% url 'home-view' %}"><img src="{% static 'assets/logo.png' %}" class="logo"></a>
+{% if request.user.is_authenticated %}
+<div class="loggoIn">
+    <a href="{% url 'home-view' %}"><img src="{% static 'assets/logo.png' %}" class="logoIn"></a>
     </div>
-
-
+{% else %}
+    <div class="loggo">
+        <a href="{% url 'home-view' %}"><img src="{% static 'assets/logo.png' %}" class="logo"></a>
+        </div>
+{% endif %}
     {% if request.user.is_authenticated %}
 <div class="UserWelc">
     <h1> Welcome <p>{{request.user.username}}</p> </h1>
@@ -22,13 +26,13 @@
 </head>
 <body>
     <section class="header">
-        
+        {% if request.user.is_authenticated %}
         <nav>
 
             <div class="cont-pages" id="pgs">  
                 <i class="fa fa-close" onclick="hideBar()"></i>
                 <ul>
-                {% if request.user.is_authenticated %}
+
                     <li><a href="{% url 'home-view' %}">Home</a></li>
                  
                     <li><a href="{% url 'balance.html' %}">Check Balance</a></li>
@@ -38,14 +42,13 @@
                     <li><a href="{% url 'withdraw.html' %}">Withdraw</a></li>
 
                     <li><a href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'home-view' %}">HOME</a></li>
-                {% endif %}
+                
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showBar()"></i>
         </nav>
         
+        {% endif %}
         <div class="txt-title">
             <h1>Kabab National Bank</h1>
             <p>You're Poorer Than You Think!</p>
