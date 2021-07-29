@@ -45,7 +45,6 @@ def balance(request):
 def logout_request(request):
 
     logout(request)
-    messages.info(request, "You logged out successfully!")
     return redirect('home-view')
 
 @login_required
