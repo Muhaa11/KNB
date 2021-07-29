@@ -18,7 +18,7 @@
                 <form method="POST" >
                 {% csrf_token %}
                 {{ form }}
-            <input id="number" type="number" name="number" placeholder="Deposit amount">
+            <input id="number" type="number" name="number" placeholder="Deposit amount" min="1">
             <button type="submit" class="hero-btn sbmt">Deposit</button>
             </form> 
             </div>

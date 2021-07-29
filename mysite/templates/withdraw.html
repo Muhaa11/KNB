@@ -14,7 +14,7 @@
                 <form method="POST" >
                 {% csrf_token %}
                 {{ form }}
-            <input id="number" type="number" name="number" placeholder="Withdraw amount">
+            <input id="number" type="number" name="number" placeholder="Withdraw amount" min="1">
                 {% for message in messages %}
 
             <div class="alert">
