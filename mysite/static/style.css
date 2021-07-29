@@ -49,7 +49,15 @@
 
 
 
+.alert p{
 
+    font-size: 15;
+    display: inline-block;
+    color: #ff0000;
+    text-transform: uppercase;
+    padding: 2%;
+
+}
 
 
 
