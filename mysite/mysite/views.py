@@ -23,6 +23,8 @@ def home_view(request):
                 login(request, user)
                 request.session['pk'] = user.pk
                 return redirect('home-view')
+            else:
+                messages.error(request, "Wrong Credentials!")
 
         elif request.POST.get('submit') == 'signUp':
             form = SignUpForm(request.POST)
@@ -32,6 +34,7 @@ def home_view(request):
                 return redirect('home-view')
             else:
                 form = SignUpForm()
+                messages.error(request, "Invalid inputs or username already exists!")
     return render(request, 'index.html', {'form': form})    
 
 @login_required
@@ -45,6 +48,7 @@ def balance(request):
 def logout_request(request):
 
     logout(request)
+    messages.success(request, 'You have logged out successfully.')
     return redirect('home-view')
 
 @login_required
@@ -58,13 +62,13 @@ def deposit(request):
         code_user = f"{user.username}: {user.balance}"
         if not request.POST:
             balance.save()
-            print(balance.number)
+           
         if request.method == "POST":
             if form.is_valid():
                 num = form.cleaned_data.get('number')
-                print(balance.number)
+                
                 balance.number = balance.number + num
-                print(balance.number)
+                
                 balance.save(force_update=True)
 
         
@@ -82,16 +86,16 @@ def withdraw(request):
         code_user = f"{user.username}: {user.balance}"
         if not request.POST:
             balance.save()
-            print(balance.number)
+            
         if request.method == "POST":
             if form.is_valid():
                 num = form.cleaned_data.get('number')
-                print(balance.number)
+                
                 balance.number = balance.number - num
                 if balance.number < 0:
                     messages.info(request, "Insufficient funds!")
                     return redirect('withdraw.html')
-                print(balance.number)
+                
                 balance.save(force_update=True)
 
         

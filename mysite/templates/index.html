@@ -13,6 +13,16 @@
     <section class="welcome">
         <h1>Welcome</h1>
         <p>To get started, Please sign in below.</p>
+
+        
+        {% for message in messages %}
+        <div class="alert">
+           <p>{{ message }}</p> 
+        </div>
+            {% endfor %}
+
+
+
         <div class="row">
             <div class="welcome-col">
                 <h3>Login</h3>
